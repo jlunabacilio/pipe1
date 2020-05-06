@@ -1,17 +1,29 @@
-node {  
-    stage('Build') { 
-        steps {
-            echo 'Building...'
+pipeline {
+   agent any
+   
+   tools {
+        maven 'maven_3_6_3' 
+    }
+   stages {
+      stage('Checking version') {
+         steps {
+            sh "mvn -version"
+         }
+    }
+      stage('Compile stage') {
+         steps {
+            sh "mvn clean compile" 
         }
     }
-    stage('Test') { 
-        steps {
-            echo 'Testing...'
+      stage('Testing stage') {
+         steps {
+            sh "mvn test"
         }
     }
-    stage('Deploy') { 
-        steps {
-            echo 'deploying...'
-        } 
-    }
+      stage('Deployment stage') {
+         steps {
+            sh "mvn deploy"
+        }
+    }  
+   }
 }

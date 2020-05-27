@@ -9,7 +9,6 @@
     
     <name>my-app</name>
     <!-- FIXME change it to the project's website -->
-    <!-- is just to test -->
     <url>http://www.example.com</url>
 
     <properties>

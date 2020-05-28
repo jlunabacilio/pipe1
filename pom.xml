@@ -9,6 +9,7 @@
     
     <name>my-app</name>
     <!-- FIXME change it to the project's website -->
+    <!-- Adding a new comment -->
     <url>http://www.example.com</url>
 
     <properties>
